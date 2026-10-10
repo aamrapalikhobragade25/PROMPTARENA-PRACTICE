@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PulseFit | Fitness Studio</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #10110f;
+      color: white;
+    }
+    header {
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #30332b;
+    }
+    .logo { color: #c6ff4d; font-size: 25px; font-weight: bold; }
+    nav a { color: white; margin-left: 20px; text-decoration: none; }
+    main { padding: 75px 8%; }
+    .tag { color: #c6ff4d; letter-spacing: 3px; }
+    h1 { font-size: clamp(40px, 7vw, 76px); margin: 18px 0; }
+    h1 span { color: #c6ff4d; }
+    p { color: #c4c6be; line-height: 1.7; max-width: 540px; }
+    button {
+      background: #c6ff4d; color: #10110f; border: none;
+      padding: 14px 22px; font-weight: bold; cursor: pointer;
+      border-radius: 6px; margin-top: 16px;
+    }
+    .card {
+      margin-top: 45px; padding: 25px; border: 1px solid #44483b;
+      border-radius: 12px; max-width: 500px;
+    }
+    footer { padding: 24px 8%; color: #999; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">PULSEFIT.</div>
+    <nav><a href="#program">Programs</a><a href="#join">Join</a></nav>
+  </header>
+  <main>
+    <div class="tag">YOUR FITNESS. YOUR FUTURE.</div>
+    <h1>MOVE STRONG.<br><span>LIVE BETTER.</span></h1>
+    <p>Build strength, discover your potential and make every workout count. Your fitness journey starts here.</p>
+    <button onclick="showMessage()">Start Your Journey ↗</button>
+    <section class="card" id="program">
+      <h2>Find your focus</h2>
+      <p>Choose your fitness goal and get a starting recommendation.</p>
+      <select id="goal" style="padding:12px; width:100%; border-radius:6px;">
+        <option value="strength">Build strength</option>
+        <option value="energy">Improve fitness</option>
+        <option value="flexibility">Improve flexibility</option>
+      </select>
+      <button onclick="recommend()">Find My Workout</button>
+      <p id="result">Your recommendation will appear here.</p>
+    </section>
+    <section id="join">
+      <h2>Ready to begin?</h2>
+      <p>Small steps. Consistent effort. A stronger you.</p>
+    </section>
+  </main>
+  <footer>© 2026 PulseFit Studio</footer>
+  <script>
+    function showMessage() {
+      alert("Welcome to PulseFit! Your fitness journey starts today.");
+    }
+    function recommend() {
+      const goal = document.getElementById("goal").value;
+      const plans = {
+        strength: "Try a beginner-friendly full-body strength session.",
+        energy: "Try a comfortable cardio session at your own pace.",
+        flexibility: "Try gentle mobility and stretching exercises."
+      };
+      document.getElementById("result").textContent = plans[goal];
+    }
+  </script>
+</body>
+</html>
